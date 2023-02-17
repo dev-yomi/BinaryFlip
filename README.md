@@ -1,6 +1,7 @@
 # BinaryFlip
 
 A solidity library to generate a pseudo-random 0 or 1 from a block hash in the past, on-chain and in a way that is impractical to manipulate.
+The library also contains a function that returns a pseudo-random number between the minValue and maxValue passed to it, using the same system.
 
 
 The library BinaryFlip is used to define the function flip, which returns a pseudo-random number (0 or 1) based on the block hash.
@@ -20,7 +21,6 @@ If the block difference is less than the minimum number of blocks specified, the
 ## Other stuff
 
 - You can see an example of an on-chain coin-flip game using the library at exampleGame.sol.
-- BinaryFlipRange is a slightly modified version that allows the generation of a pseudo-random integer between the given values.
 
 ## Issues
 

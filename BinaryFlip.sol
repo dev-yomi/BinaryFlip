@@ -8,9 +8,7 @@ library BinaryFlip {
      backwards in time a number of blocks equal to half the block difference between the current block and the lastBlockNumber parameter. 
      The maximum number of blocks to move is capped at 256 to prevent an out of range error. 
      If the resulting block number is even, that block's hash is used to generate the random number; if it's odd, the previous block's hash is used. 
-     The resulting hash is then converted to a number between 0 and 1, which is returned by the function.
-     
-      
+     The resulting hash is then converted to a number between 0 and 1, which is returned by the function.  
      */
 
 

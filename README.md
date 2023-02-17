@@ -17,6 +17,11 @@ If the block difference is less than the minimum number of blocks specified, the
 - The flip function is not very gas efficient and may consume more gas than other methods of generating random numbers. Therefore, I do not recommend to use this function in high frequency or high gas cost environments.
 - DO NOT USE THIS LIBRARY WITHOUT EXTREME CAUTION. IT IS LARGELY UNTESTED.
 
+## Other stuff
+
+- You can see an example of an on-chain coin-flip game using the library at exampleGame.sol
+- BinaryFlipRange is a slightly modified version that allows the generation of any integer between the given values.
+
 ## Issues
 
 - I have hardly even tested it.

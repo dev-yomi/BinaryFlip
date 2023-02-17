@@ -19,7 +19,7 @@ If the block difference is less than the minimum number of blocks specified, the
 
 ## Other stuff
 
-- You can see an example of an on-chain coin-flip game using the library at exampleGame.sol
+- You can see an example of an on-chain coin-flip game using the library at exampleGame.sol.
 - BinaryFlipRange is a slightly modified version that allows the generation of any integer between the given values.
 
 ## Issues

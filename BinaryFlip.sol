@@ -3,7 +3,8 @@ pragma solidity ^0.8.0;
 library BinaryFlip {
 
      /*   
-     The function returns a 0 or 1 at pseudo-random.
+     The flipBinary() function returns a 0 or 1 at pseudo-random.
+     The flipRange() function returns a pseudo-random number between the minValue and maxValue passed to it
      The flip function generates a pseudo-random number based on the block hash of a block chosen by taking the current block number and moving 
      backwards in time a number of blocks equal to half the block difference between the current block and the lastBlockNumber parameter. 
      The maximum number of blocks to move is capped at 256 to prevent an out of range error. 

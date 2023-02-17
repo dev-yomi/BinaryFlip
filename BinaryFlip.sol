@@ -12,7 +12,7 @@ library BinaryFlip {
      */
 
 
-    function flip(uint256 lastBlockNumber, uint256 minBlocks) internal view returns (uint256) {
+    function flipBinary(uint256 lastBlockNumber, uint256 minBlocks) internal view returns (uint256) {
             // Calculates the number of blocks between the current block and the lastBlockNumber
             uint256 blockDifference = block.number - lastBlockNumber;
             // If the block difference is greater than 256, sets it to 256 to prevent an out of range error
@@ -29,4 +29,23 @@ library BinaryFlip {
                 revert("Minimum block difference not met.");
             }
     }
+
+    function flipRange(uint256 lastBlockNumber, uint256 minBlocks, uint256 minValue, uint256 maxValue) internal view returns (uint256) {
+            // Calculates the number of blocks between the current block and the lastBlockNumber
+            uint256 blockDifference = block.number - lastBlockNumber;
+            // If the block difference is greater than 256, sets it to 256 to prevent an out of range error
+            if (blockDifference > 256){
+                blockDifference = 256;
+            }
+            // If the block difference is greater than or equal to the minimum number of blocks specified, generates a random number based on block hash
+            // The block chosen is located in the future relative to the lastBlockNumber and the past relative to the call
+            if (blockDifference >= minBlocks) {
+                bytes32 blockHash = blockhash((block.number % 2 == 0) ? block.number - (blockDifference / 2) : block.number - (blockDifference / 2) - 1);
+                uint256 randomValue = uint256(blockHash) % (maxValue - minValue + 1) + minValue;
+                return randomValue;
+            } else {
+                // If the block difference is less than the minimum number of blocks specified, throws an error
+                revert("Minimum block difference not met.");
+            }
+        }
 }

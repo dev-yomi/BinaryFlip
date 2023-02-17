@@ -26,7 +26,7 @@ contract CoinFlip {
     function flipCoin() public {
         // Calls the flip function from the BinaryFlip library to generate a random number
         // Uses the lastFlipBlock and a minimum of 5 blocks between flips as input parameters
-        uint256 randomNumber = BinaryFlip.flip(lastFlipBlock, 5);
+        uint256 randomNumber = BinaryFlip.flipBinary(lastFlipBlock, 5);
         // Determines whether the player wins based on the random number
         bool win = (randomNumber == 1);
         // Increments the flipCount variable
